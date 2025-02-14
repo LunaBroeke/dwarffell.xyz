@@ -1,0 +1,247 @@
+﻿@page
+@model ServerListModel
+@using ServerList.Pages
+@using ServerList.SMOOJsonAPI
+@using Newtonsoft.Json
+@{
+	ViewData["Title"] = "Server List";
+}
+<head>
+	<meta property="og:title" content="dwarffell.xyz - Server List"/>
+	<meta property="og:description" content="Server List for Super Mario Odyssey Online and some of my other servers"/>
+	<meta property="og:url" content="https://dwarffell.xyz" />
+	<meta property="og:type" content="website" />
+	<meta name="theme color" content="#800093" />
+</head>
+<style>
+	body, html {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction:column;
+		/*justify-content: center;*/
+		/*align-items: center;*/
+		min-height: 100vh;
+		/*background-color: #f0f0f0;*/
+	}
+
+	header{
+		width: 100%;
+		text-align: center;
+		padding: 20px;
+		/*background-color: #f8f8f8;*/
+		color: white;
+	}
+
+	.content-wrapper {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 30px 5px 30px 5px;
+		background-color: #121212;
+	}
+
+
+	.container {
+		text-align: center; /* Center text in the container */
+		background-color: #1b151d;
+		padding: 20px; /* Add some padding */
+		border-radius: 8px; /* Optional rounded corners */
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+		width: 90%; /* Set a width for the container */
+		max-width: 800px; /* Optional max width */
+	}
+
+	table {
+		width: 100%; /* Make tables take the full width of the container */
+		margin-top: 20px; /* Space between heading and table */
+		border: 2px solid #362f3a;
+		table-layout:fixed;
+	}
+
+	th, td {
+		padding: 10px; /* Padding for table cells */
+		border: 1px solid #2b272c; /* Optional border */
+	}
+
+	th {
+		background-color: #2a222d;
+	}
+</style>
+<div class="content-wrapper">
+<div class="container">
+	<h1 style="font-size: 38px;">Super Mario Odyssey Online</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>State</th>
+				<th>Server</th>
+				<th>Info</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (GameServer server in Model.serverData.SMOO)
+			{
+				<tr>
+					<td>
+						@if (server.State.online)
+						{
+							if (server.State.SMOOjsonSuccess)
+							{
+								<div style="width: 64px; height: 32px; background-color: green; border-radius: 25%; display: flex; justify-content: center; align-items: center; margin: 0 auto;"
+									 onclick='openModal(@Html.Raw(JsonConvert.SerializeObject(server.State.users)))'>
+									<span style="color: white;">@server.State.users.Count/@server.State.maxUsers</span>
+								</div>
+							}
+							else
+							{
+								<div style="width: 16px; height: 16px; background-color: green; border-radius: 50%; margin: 0 auto;"></div>
+							}
+						}
+						else
+						{
+							<div style="width: 16px; height: 16px; background-color: red; border-radius: 50%; margin: 0 auto;"></div>
+						}
+					</td>
+					<td>
+						<strong>@server.Title</strong><br />
+						Hostname: @server.Hostname<br />
+						<small>IP: @server.Address</small><br />
+						Port: @server.Port
+					</td>
+					<td>
+						@server.GameInfo.Info<br />
+						<a href="@server.GameInfo.Link">@server.GameInfo.linkDisplay</a><br />
+						@server.ServerInfo.Info<br />
+						<a href="@server.ServerInfo.Link">@server.ServerInfo.linkDisplay</a>
+					</td>
+				</tr>
+
+			}
+		</tbody>
+	</table>
+	<h1>Other Servers</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>State</th>
+				<th>Server</th>
+				<th>Info</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (GameServer server in Model.serverData.Other)
+			{
+				if (server.Address == "127.0.0.1")
+				{
+					continue;
+				}
+				<tr>
+					<td>
+						@if (ServerListModel.isOnline(server))
+						{
+
+							<div style="width: 16px; height: 16px; background-color: green; border-radius: 50%; margin: 0 auto;"></div>
+
+						}
+						else
+						{
+							<div style="width: 16px; height: 16px; background-color: red; border-radius: 50%; margin: 0 auto;"></div>
+						}
+					</td>
+					<td>
+						<strong>@server.Title</strong><br />
+						Hostname: @server.Hostname<br />
+						<small>IP: @server.Address</small><br />
+						Port: @server.Port
+					</td>
+					<td>
+						@server.GameInfo.Info<br />
+						<a href="@server.GameInfo.Link">@server.GameInfo.linkDisplay</a><br />
+						@server.ServerInfo.Info<br />
+						<a href="@server.ServerInfo.Link">@server.ServerInfo.linkDisplay</a>
+					</td>
+				</tr>
+
+			}
+		</tbody>
+	</table>
+</div>
+</div>
+<style>
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: #333333;
+	}
+
+	.modal-content {
+		background-color: var(--background-color-secondary);
+		margin: 15% auto;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 80%;
+		max-width: 600px;
+		border-radius: 8px;
+		box-shadow: 0 2px 10px #000000;
+	}
+
+	.close-button {
+		color: #aaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+		.close-button:hover,
+		.close-button:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+</style>
+<div" id="statusModal" class="modal">
+	<div class="modal-content">
+		<span class="close-button" onclick="closeModal()">&times;</span>
+		<h2>Players Currently Online</h2>
+		<p id="modalContent">
+			This will show server details
+
+		</p>
+	</div>
+	</div>
+	<script>
+		function openModal(users) {
+			var userList = '';
+			if (users && users.length > 0) {
+				userList = '<strong>Users:</strong><br/>';
+				users.forEach(function (user) {
+					userList += `- ${user.name} - ${user.SMOmap}<br/>`;
+				});
+			}
+			else {
+				userList = '<strong>No users connected.</strong><br/>';
+			}
+			document.getElementById("modalContent").innerHTML = userList;
+			document.getElementById("statusModal").style.display = "block";
+		}
+
+		function closeModal() {
+			document.getElementById("statusModal").style.display = "none";
+		}
+
+		// Close the modal if the user clicks outside of it
+		window.onclick = function (event) {
+			var modal = document.getElementById("statusModal");
+			if (event.target == modal) {
+				closeModal();
+			}
+		}
+	</script>

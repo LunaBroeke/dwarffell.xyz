@@ -1,0 +1,16 @@
+﻿@page
+@model LunaSite.Pages.WIPModel
+@{
+	ViewData["Title"] = "Work in Progress";
+}
+
+<body>
+	<div class="text-center">
+		<h1>Work In Progress!</h1>
+		@WIPModel.WipText()
+		<br />
+		<a href="/Index">
+			<button class="simple-button">Home</button>
+		</a>
+	</div>
+</body>

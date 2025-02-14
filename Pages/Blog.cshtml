@@ -1,0 +1,17 @@
+﻿@page
+@model LunaSite.Pages.BlogModel
+@{
+	ViewData["Title"] = "Luna's Blog";
+}
+@foreach (var post in Model.root.Posts.OrderByDescending(p => p.TimeStamp))
+{
+	<article class="blog-post">
+		<h2>@post.Title</h2>
+		<p><small> @post.Author - @post.TimeStamp.ToString("dd MMMM, yyyy - HH:mm")</small></p>
+		<div class="post-content">
+			@Html.Raw(BlogModel.ConvertMarkdownToHtml(post.Content))
+			@*@post.Content*@
+		</div>
+		<hr />
+	</article>
+}

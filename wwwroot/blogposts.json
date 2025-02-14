@@ -1,0 +1,28 @@
+{
+  "Posts": [
+    {
+      "Title": "example title",
+      "Content": "example content [[example.png]]",
+      "Author": "Luna Broeke",
+      "TimeStamp": "2024-11-04T23:00:00+01:00"
+    },
+    {
+      "Title": "example title2",
+      "Content": "example content2 [[example2.png]]",
+      "Author": "Luna Noa Broeke",
+      "TimeStamp": "2024-11-04T21:00:00+01:00"
+    },
+    {
+      "Title": "example title3",
+      "Content": "example content3 [[example3.png]]",
+      "Author": "Luna Broeke",
+      "TimeStamp": "2024-11-04T22:00:00+01:00"
+    },
+    {
+      "Title": "example title4",
+      "Content": "example content4 [[example4.png]]",
+      "Author": "Luna Broeke",
+      "TimeStamp": "2024-11-04T20:30:00+01:00"
+    }
+  ]
+}

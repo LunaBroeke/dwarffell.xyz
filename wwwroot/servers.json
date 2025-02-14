@@ -1,0 +1,118 @@
+{
+  "SMOO": [
+    {
+      "title": "Hide & Seek",
+      "address": "5.180.182.219",
+      "port": "1027",
+      "hostname": "luwuna.smoo.it",
+      "GameInfo": {
+        "info": "Requires Super Mario Odyssey Online by Craftyboss (and of course a legal copy of Super Mario Odyssey)",
+        "link": "https://github.com/CraftyBoss/SuperMarioOdysseyOnline/releases/tag/v1.4.0",
+        "linkDisplay": "SMOO/v1.4.0"
+      },
+      "ServerInfo": {
+        "info": "",
+        "link": "https://github.com/LunaBroeke/SmoOnlineServer",
+        "linkDisplay": "SMOOserver/main"
+      }
+    },
+    {
+      "title": "Co-op",
+      "address": "5.180.182.219",
+      "port": "1028",
+      "hostname": "luwuna.smoo.it",
+      "GameInfo": {
+        "info": "Requires SMOO (look at 1027)",
+        "link": "https://github.com/CraftyBoss/SuperMarioOdysseyOnline/releases/tag/v1.4.0",
+        "linkDisplay": "SMOO/1.4.0"
+      },
+      "ServerInfo": {
+        "info": "",
+        "link": "https://github.com/LunaBroeke/SmoOnlineServer",
+        "linkDisplay": "SMOOserver/main"
+      }
+    },
+    {
+      "title": "Versus",
+      "address": "5.180.182.219",
+      "port": "1029",
+      "hostname": "luwuna.smoo.it",
+      "GameInfo": {
+        "info": "Requires SMOO (look at 1027)& SrDev's Manhunt",
+        "link": "https://www.smoo-ext.run.place/",
+        "linkDisplay": "SMOO extensions"
+      },
+      "ServerInfo": {
+        "info": "",
+        "link": "https://github.com/LunaBroeke/SmoOnlineServer",
+        "linkDisplay": "SMOOserver/main"
+      }
+    },
+	{
+      "title": "Project testing server",
+      "address": "5.180.182.219",
+      "port": "2057",
+      "hostname": "luwuna.smoo.it",
+      "GameInfo": {
+        "info": "Requires SMOO (look at 1027)",
+        "link": "https://github.com/CraftyBoss/SuperMarioOdysseyOnline/releases/tag/v1.4.0",
+        "linkDisplay": "SMOO/v1.4.0"
+      },
+      "ServerInfo": {
+        "info": "This server is meant for testing Super Mario Odyssey Online related projects",
+        "link": "https://github.com/LunaBroeke/SmoOnlineServer",
+        "linkDisplay": "SMOOserver/main"
+      }
+    }
+  ],
+  "Other": [
+    {
+      "title": "localhost",
+      "address": "127.0.0.1",
+      "port": "2051",
+      "hostname": "localhost",
+      "GameInfo": {
+        "info": "for debugging, should not be displayed on webstie",
+        "link": "",
+        "linkDisplay": ""
+      },
+      "ServerInfo": {
+        "info": "for debugging, should not be displayed on website",
+        "link": "",
+        "linkDisplay": ""
+      }
+    },
+    {
+      "title": "Raid Prototype Public Playtest",
+      "address": "5.180.182.219",
+      "port": "2051",
+      "hostname": "dwarffell.xyz",
+      "GameInfo": {
+        "info": "Current project I am working on to learn netcoding",
+        "link": "",
+        "linkDisplay": ""
+      },
+      "ServerInfo": {
+        "info": "",
+        "link": "https://github.com/LunaBroeke/RaidPrototypeServer",
+        "linkDisplay": "RaidPrototypeServer/master"
+      }
+    },
+	{
+      "title": "Raid Prototype Public Playtest 2",
+      "address": "5.180.182.219",
+      "port": "2052",
+      "hostname": "dwarffell.xyz",
+      "GameInfo": {
+        "info": "Current project I am working on to learn netcoding",
+        "link": "",
+        "linkDisplay": ""
+      },
+      "ServerInfo": {
+        "info": "",
+        "link": "https://github.com/LunaBroeke/RaidPrototypeServer",
+        "linkDisplay": "RaidPrototypeServer/master"
+      }
+    }
+  ]
+}
