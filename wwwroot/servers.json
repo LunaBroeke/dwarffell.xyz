@@ -83,35 +83,25 @@
       }
     },
     {
-      "title": "Raid Prototype Public Playtest",
+      "title": "Http Server",
       "address": "5.180.182.219",
-      "port": "2051",
-      "hostname": "dwarffell.xyz",
-      "GameInfo": {
-        "info": "Current project I am working on to learn netcoding",
+      "port": "80",
+      "hostname": "http://dwarffell.xyz/",
+      "ServerInfo": {
+        "info": "If you're seeing this it should be working",
         "link": "",
         "linkDisplay": ""
-      },
-      "ServerInfo": {
-        "info": "",
-        "link": "https://github.com/LunaBroeke/RaidPrototypeServer",
-        "linkDisplay": "RaidPrototypeServer/master"
       }
     },
-	{
-      "title": "Raid Prototype Public Playtest 2",
+    {
+      "title": "Https Server",
       "address": "5.180.182.219",
-      "port": "2052",
-      "hostname": "dwarffell.xyz",
-      "GameInfo": {
-        "info": "Current project I am working on to learn netcoding",
+      "port": "443",
+      "hostname": "https://dwarffell.xyz/",
+      "ServerInfo": {
+        "info": "If you're seeing this it should be working",
         "link": "",
         "linkDisplay": ""
-      },
-      "ServerInfo": {
-        "info": "",
-        "link": "https://github.com/LunaBroeke/RaidPrototypeServer",
-        "linkDisplay": "RaidPrototypeServer/master"
       }
     }
   ]

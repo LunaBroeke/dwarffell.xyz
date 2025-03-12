@@ -8,6 +8,7 @@ namespace LunaSite
 
 			// Add services to the container.
 			builder.Services.AddRazorPages();
+			builder.Services.AddControllers();
 
 			var app = builder.Build();
 
@@ -27,6 +28,7 @@ namespace LunaSite
 			app.UseAuthorization();
 
 			app.MapRazorPages();
+			app.MapControllers();
 
 			app.Run();
 		}
