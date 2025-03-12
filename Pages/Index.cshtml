@@ -5,38 +5,55 @@
 }
 
 <body>
-
 	<div class="text-center">
 		<h1>Welcome to dwarffell.xyz</h1>
+		<div id="clock" style="font-size: 25px; padding:15px;"></div>
+		<h2>Super Mario Odyssey Online</h2>
+		<a href="/ServerList">
+			<button class="simple-button">Server List</button>
+		</a>
+		<a href="https://github.com/LunaBroeke/SmoOnlineServer">
+			<button class="simple-button">Server Build</button>
+		</a>
+		<br />
+		<a href="https://discord.gg/Y3474X6vVk">
+			<button class="simple-button" padding:5px>CraftyBoss Discord Server</button>
+		</a>
+		<h2>REAL links</h2>
+		<a href="https://github.com/LunaBroeke" target="_blank">
+			<button class="simple-button">Github</button>
+		</a>
+		<a href="https://lunabroeke.dev" target="_blank">
+			<button class="simple-button">temp portfolio until I finish the dwarffell.xyz project</button>
+		</a>
+
 		<h2>Final Fantasy XIV</h2>
 		<h3>Celestia Vonluna</h3>
 		<a href="https://na.finalfantasyxiv.com/lodestone/character/51837450/" target="_blank">
 			<button class="simple-button">Lodestone</button>
 		</a>
 		<a href="https://celestia.dwarffell.xyz" target="_blank">
-			<button class="simple-button">Carrd</button>	
+			<button class="simple-button">Carrd</button>
 		</a>
-		<a href="https://bsky.app/profile/celestia.dwarffell.xyz" target="_blank">
+		<a href="https://bsky.app/profile/dwarffell.xyz" target="_blank">
 			<button class="simple-button">Bluesky</button>
-		</a>
-		<h3>Ange Vonluna</h3>
-		@WIPModel.WipText()
-		<h3>Beatrice Mary</h3>
-		@WIPModel.WipText();
-		<h2>Super Mario Odyssey Online</h2>
-		<a href="/ServerList">
-			<button class="simple-button">Server List</button>	
-		</a>
-		<a href="https://github.com/LunaBroeke/SmoOnlineServer" target="_blank">
-			<button class="simple-button">Server Build</button>	
-		</a>
-		<br/>
-		<a href="https://discord.gg/Y3474X6vVk" target="_blank">
-			<button class="simple-button" padding:5px>CraftyBoss Discord Server</button>	
-		</a>
-		<h2>REAL links</h2>
-		<a href="https://github.com/LunaBroeke" target="_blank">
-			<button class="simple-button">Github</button>
 		</a>
 	</div>
 </body>
+<script>
+	function updateClock(){
+		const clock =document.getElementById("clock");
+		fetch('/api/time')
+		.then(response => response.json())
+		.then(data => {
+			clock.textContent = `Server Time: ${data.time}`;
+		})
+		.catch(error => {
+			console.error("Error fetching Server time:",error);
+		})
+	}
+
+	setInterval(updateClock,1000);
+
+	updateClock();
+</script>
