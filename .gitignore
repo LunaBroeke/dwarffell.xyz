@@ -400,3 +400,4 @@ FodyWeavers.xsd
 *.sln.iml
 AuthTokens.cs
 dwarffell.xyz.sln
+publish.sh
