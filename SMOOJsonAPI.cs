@@ -7,56 +7,56 @@ namespace ServerList.SMOOJsonAPI
 {
 	public class Costume
 	{
-		public string Cap { get; set; }
-		public string Body { get; set; }
+		public string? Cap { get; set; }
+		public string? Body { get; set; }
 	}
 
 	public class PersistShines
 	{
-		public bool Enabled { get; set; }
+		public bool? Enabled { get; set; }
 	}
 
 	public class Player
 	{
-		public string ID { get; set; }
-		public string Name { get; set; }
-		public string Kingdom { get; set; }
-		public int? GameMode { get; set; }
-		public string Stage { get; set; }
-		public int? Scenario { get; set; }
-		public Position Position { get; set; }
-		public Rotation Rotation { get; set; }
+		public string? ID { get; set; }
+		public string? Name { get; set; }
+		public string? Kingdom { get; set; }
+		public int GameMode { get; set; }
+		public string? Stage { get; set; }
+		public int Scenario { get; set; }
+		public Position? Position { get; set; }
+		public Rotation? Rotation { get; set; }
 		public bool? Tagged { get; set; }
-		public Costume Costume { get; set; }
-		public string Capture { get; set; }
+		public Costume? Costume { get; set; }
+		public string? Capture { get; set; }
 		public bool? Is2D { get; set; }
-		public string IPv4 { get; set; }
+		public string? IPv4 { get; set; }
 	}
 
 	public class Position
 	{
-		public double X { get; set; }
-		public double Y { get; set; }
-		public double Z { get; set; }
+		public double? X { get; set; }
+		public double? Y { get; set; }
+		public double? Z { get; set; }
 	}
 
 	public class Root
 	{
-		public Settings Settings { get; set; }
-		public List<Player> Players { get; set; }
+		public Settings? Settings { get; set; }
+		public List<Player>? Players { get; set; }
 	}
 
 	public class Rotation
 	{
-		public double W { get; set; }
-		public double X { get; set; }
-		public double Y { get; set; }
-		public double Z { get; set; }
+		public double? W { get; set; }
+		public double? X { get; set; }
+		public double? Y { get; set; }
+		public double? Z { get; set; }
 	}
 
 	public class Scenario
 	{
-		public bool MergeEnabled { get; set; }
+		public bool? MergeEnabled { get; set; }
 	}
 
 	public class Server
@@ -66,15 +66,15 @@ namespace ServerList.SMOOJsonAPI
 
 	public class Settings
 	{
-		public PersistShines PersistShines { get; set; }
-		public Scenario Scenario { get; set; }
-		public Server Server { get; set; }
-		public Shines Shines { get; set; }
+		public PersistShines? PersistShines { get; set; }
+		public Scenario? Scenario { get; set; }
+		public Server? Server { get; set; }
+		public Shines? Shines { get; set; }
 	}
 
 	public class Shines
 	{
-		public bool Enabled { get; set; }
+		public bool? Enabled { get; set; }
 	}
 
 	public class SMOOJsonAPI

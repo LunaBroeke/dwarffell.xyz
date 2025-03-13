@@ -1,23 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
-
+using LunaSite.Blog;
 namespace LunaSite.Pages
 {
-	public class Post
-	{
-		public string Title { get; set; }
-		public string Content { get; set; }
-		public string Author { get; set; }
-		public DateTime TimeStamp { get; set; }
-	}
-
-	public class Root
-	{
-		public List<Post> Posts { get; set; }
-	}
-
-
 	public class BlogModel : PageModel
     {
 		public Root root { get; set; }

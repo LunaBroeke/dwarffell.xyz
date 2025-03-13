@@ -1,0 +1,28 @@
+@page
+
+<body>
+    <form id="blogForm">
+        <input type="text" id="user" name="user" required><br>
+        <input type="text" id="pass" name="pass" required><br>
+        <button type="submit" onclick="submitForm()">Submit</button>
+    </form>
+</body>
+<script>
+async function submitForm(){
+    const formData = {
+        user: document.getElementById('user').value,
+        pass: document.getElementById('pass').value
+    };
+
+    const response = await fetch('/api/admin/blogwriter', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    });
+
+    const result = await response.text();
+    console.log(result);
+}
+</script>
