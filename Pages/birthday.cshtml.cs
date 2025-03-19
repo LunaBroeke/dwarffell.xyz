@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.IO;
 
 namespace LunaSite.Pages
 {
@@ -7,6 +8,23 @@ namespace LunaSite.Pages
     {
         public void OnGet()
         {
+
         }
-    }
+
+        public string GetHTMLPage()
+		{
+            DateTime now = DateTime.Now;
+            DateTime startDate = new DateTime(2025, 3, 19);
+			DateTime endDate = new DateTime(2025, 3, 29);
+			bool theDay = now >= startDate && now <= endDate;
+			if (theDay)
+            {
+                return System.IO.File.ReadAllText("Pages/Special/birthdayhere.html");
+            }
+            else
+            {
+                return System.IO.File.ReadAllText("Pages/Special/birthdaywait.html");
+            }
+		}   
+	}
 }

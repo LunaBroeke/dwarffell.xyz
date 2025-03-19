@@ -1,0 +1,39 @@
+﻿<body>
+    <div class="text-center">
+        <h1>The epic Luna birthday</h1>
+        <div id="clock"></div>
+
+        So what do we do today?<br/>
+        This is my day to push you into <a href="https://ko-fi.com/dwarffell">buying me a coffee.</a> <br /> <br />
+        
+        Though of course you can also support me emotionally in
+        <h2>Final Fantasy XIV Online</h2>
+        Here I will be hosting my birthday inside the game in my apartment <br />
+        <span class="location">Faerie, Aether, The Lavender Beds, Ward 14, Lily Hills Subdivision, Apartment 27</span><br/>
+        At <span id="event-time-ffxiv"></span> (that'd be in <span id="timertwo" class="timer"></span>) <br/>
+        <img src="/bday-FFXIV.png" alt="Poster of my apartment in Final Fantasy XIV Online" class="poster" />
+        <br/><br />
+
+        <h2>Super Mario Odyssey Online</h2>
+        Afterwards I'll be getting online on SMOO on <br/>
+        <span class="location">luwuna.smoo.it:2803</span><br/>
+        at <span id="event-time-smoo"></span> (that'd be in <span id="timerthree" class="timer"></span>) <br/>
+    </div>
+</body>
+<script src="/js/site.js"></script>
+<script>
+    const itemone = "clock";
+    const itemtwo = "timertwo";
+    const itemthree = "timerthree";
+    const targettwo = "28-March-2025-21-00";
+    const targetthree = "28-March-2025-23-00";
+    setInterval(() => updateClock(itemone), 1000);
+    setInterval(() => updateTimer(itemtwo, targettwo), 1000);
+    setInterval(() => updateTimer(itemthree, targetthree), 1000);
+    updateClock(itemone);
+    updateTimer(itemtwo, targettwo);
+    updateTimer(itemthree, targetthree);
+
+    updateEventTime("event-time-ffxiv", new Date(Date.UTC(2025, 3, 28, 19, 0)));
+    updateEventTime("event-time-smoo", new Date(Date.UTC(2025, 3, 28, 21, 0)));
+</script>
