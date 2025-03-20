@@ -48,8 +48,24 @@
         "linkDisplay": "SMOOserver/main"
       }
     },
+    {
+      "title": "Birthday Event",
+      "address": "5.180.182.219",
+      "port": "2803",
+      "hostname": "luwuna.smoo.it",
+      "GameInfo": {
+        "info": "Requires SMOO (look at 1027)",
+        "link": "https://www.smoo-ext.run.place/",
+        "linkDisplay": "SMOO extensions"
+      },
+      "ServerInfo": {
+        "info": "Only available on my birthday",
+        "link": "https://github.com/LunaBroeke/SmoOnlineServer",
+        "linkDisplay": "SMOOserver/main"
+      }
+    },
 	{
-      "title": "Project testing server",
+      "title": "Helper server",
       "address": "5.180.182.219",
       "port": "2057",
       "hostname": "luwuna.smoo.it",

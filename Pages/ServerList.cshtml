@@ -19,10 +19,7 @@
 		padding: 0;
 		display: flex;
 		flex-direction:column;
-		/*justify-content: center;*/
-		/*align-items: center;*/
 		min-height: 100vh;
-		/*background-color: #f0f0f0;*/
 	}
 
 	header{
@@ -226,7 +223,11 @@
 			if (users && users.length > 0) {
 				userList = '<strong>Users:</strong><br/>';
 				users.forEach(function (user) {
-					userList += `- ${user.name} - ${user.SMOmap}<br/>`;
+					userList += `- ${user.name}`;
+					if (user.SMOmap != null) {
+						userList += ` - (${user.SMOmap})`;
+					}
+					userList +='<br/>'
 				});
 			}
 			else {
