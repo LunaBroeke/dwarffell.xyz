@@ -14,7 +14,7 @@ function updateClock(item) {
 			console.error("Error fetching Server time:", error);
 		})
 }
-function updateTimer(item, targetTime) {
+function updateTimer(item, targetTime, refresh) {
     const clock = document.getElementById(item);
     fetch(`/api/time/until?targetTime=${encodeURIComponent(targetTime)}`)
         .then(response => response.json())
@@ -22,8 +22,8 @@ function updateTimer(item, targetTime) {
             if (data.timeUntil) {
                 clock.textContent = data.timeUntil;
             } else {
-                clock.textContent = `Error: ${data.message}`;
-                if (data.message === "Time is in the past") {
+                clock.textContent = data.message;
+                if (data.message === "Time is in the past" && refresh === true) {
                     location.reload();
                 }
             }

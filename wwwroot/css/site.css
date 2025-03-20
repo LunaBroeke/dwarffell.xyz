@@ -157,3 +157,7 @@ a {
 .poster{
     width: 220px;
 }
+.event{
+    padding-top:5px;
+    padding-bottom:30px;
+}
