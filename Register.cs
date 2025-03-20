@@ -70,7 +70,7 @@ namespace LunaSite.Register
             string s = "";
             foreach (Root r in table.RootTable.AsEnumerable().Reverse())
             {
-                s += $"<div class='bdaypost'><span class='bdayname'>{r.name} Wishes Luna a Happy Birthday!</span><br/><span class='bdaymessage'>{r.message}</span><br/><span class='bdaytime'>{r.time.ToString("HH:mm:ss")}</span></div>";   
+                s += $"<div class='bdaypost'><span class='bdayname'>{r.name} Wishes Luna a Happy Birthday!</span><br/><span class='bdaymessage'>{r.message}</span><br/><span class='bdaytime'>{r.time.ToString("dd MMM yyyy HH:mm:ss")}</span></div>";   
             }
             return Ok( new {message = $"<div class='bdaymessagetable'>{s}</div>"});
         }
