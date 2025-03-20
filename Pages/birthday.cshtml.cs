@@ -8,7 +8,7 @@ namespace LunaSite.Pages
     {
         public void OnGet()
         {
-
+            LunaSite.Register.Register.RefreshTable();
         }
 
         public string GetHTMLPage()

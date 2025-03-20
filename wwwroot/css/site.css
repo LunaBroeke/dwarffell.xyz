@@ -161,3 +161,40 @@ a {
     padding-top:5px;
     padding-bottom:30px;
 }
+.registerform{
+    padding: 2px;
+}
+input,textarea{
+    background-color: #2f2435;
+    color: white;
+    border: 2px solid #4e3e62;
+    border-radius: 14px;
+    font-size:16px;
+    padding:10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+input:focus, textarea:focus{
+    background-color:#5a396c;
+}
+.bdaymessagetable{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.bdaypost{
+    padding: 10px;
+    border-bottom: 1px solid #4e3e62;
+}
+.bdayname{
+    font-size: 20px;
+    font-weight: bold;
+}
+.bdaymessage{
+    font-size: 16px;
+}
+.bdaytime{
+    font-size: 12px;
+    color: #4e3e62;
+    font-style: italic;
+}
