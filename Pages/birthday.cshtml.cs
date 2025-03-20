@@ -14,9 +14,13 @@ namespace LunaSite.Pages
         public string GetHTMLPage()
 		{
             DateTime now = DateTime.Now;
-            DateTime startDate = new DateTime(2025, 3, 19); //Don't forget to change the day to 28 before publish
+            DateTime startDate = new DateTime(2025, 3, 28);
 			DateTime endDate = new DateTime(2025, 3, 29);
-			bool theDay = now >= startDate && now <= endDate;
+			bool theDay = now >= startDate;
+            if (now >= endDate)
+            {
+                return System.IO.File.ReadAllText("Pages/Special/birthdayend.html");
+            }
 			if (theDay)
             {
                 return System.IO.File.ReadAllText("Pages/Special/birthdayhere.html");
