@@ -15,7 +15,7 @@ namespace LunaSite.Pages
 
 		public string SecretButton()
 		{
-			DateTime startTime = new DateTime(2025, 3, 19, 23, 15, 00);
+			DateTime startTime = new DateTime(2025, 3, 24);
 			DateTime endTime = new DateTime(2025, 3, 29);
 			DateTime now = DateTime.Now;
 			bool display = now >= startTime && now <= endTime;
