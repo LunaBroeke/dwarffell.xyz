@@ -48,8 +48,24 @@
         "linkDisplay": "SMOOserver/main"
       }
     },
+    {
+      "title": "Birthday Event",
+      "address": "5.180.182.219",
+      "port": "2803",
+      "hostname": "luwuna.smoo.it",
+      "GameInfo": {
+        "info": "Requires SMOO (look at 1027)",
+        "link": "https://www.smoo-ext.run.place/",
+        "linkDisplay": "SMOO extensions"
+      },
+      "ServerInfo": {
+        "info": "Only available on my birthday",
+        "link": "https://github.com/LunaBroeke/SmoOnlineServer",
+        "linkDisplay": "SMOOserver/main"
+      }
+    },
 	{
-      "title": "Project testing server",
+      "title": "Helper server",
       "address": "5.180.182.219",
       "port": "2057",
       "hostname": "luwuna.smoo.it",
@@ -89,8 +105,8 @@
       "hostname": "http://dwarffell.xyz/",
       "ServerInfo": {
         "info": "If you're seeing this it should be working",
-        "link": "",
-        "linkDisplay": ""
+        "link": "https://github.com/LunaBroeke/dwarffell.xyz/",
+        "linkDisplay": "dwarffell.xyz/main"
       }
     },
     {
@@ -100,8 +116,19 @@
       "hostname": "https://dwarffell.xyz/",
       "ServerInfo": {
         "info": "If you're seeing this it should be working",
-        "link": "",
-        "linkDisplay": ""
+        "link": "https://github.com/LunaBroeke/dwarffell.xyz/",
+        "linkDisplay": "dwarffell.xyz/main"
+      }
+    },
+    {
+      "title": "Dwarffell.xyz testing Server",
+      "address": "5.180.182.219",
+      "port": "3028",
+      "hostname": "http://dwarffell.xyz:3028/",
+      "ServerInfo": {
+        "info": "Testing Page for testing out if new dwarffell.xyz features work on publish",
+        "link": "https://github.com/LunaBroeke/dwarffell.xyz/",
+        "linkDisplay": "dwarffell.xyz/main"
       }
     }
   ]

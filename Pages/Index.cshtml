@@ -6,8 +6,10 @@
 
 <body>
 	<div class="text-center">
+		@Html.Raw(Model.SecretButton())
 		<h1>Welcome to dwarffell.xyz</h1>
-		<div id="clock" style="font-size: 25px; padding:15px;"></div>
+		<p class="subtext">created by Luna Broeke</p>
+		<div id="clock"></div>
 		<h2>Super Mario Odyssey Online</h2>
 		<a href="/ServerList">
 			<button class="simple-button">Server List</button>
@@ -40,20 +42,9 @@
 		</a>
 	</div>
 </body>
+<script src="/js/site.js"></script>
 <script>
-	function updateClock(){
-		const clock =document.getElementById("clock");
-		fetch('/api/time')
-		.then(response => response.json())
-		.then(data => {
-			clock.textContent = `Server Time: ${data.time}`;
-		})
-		.catch(error => {
-			console.error("Error fetching Server time:",error);
-		})
-	}
+	setInterval(()=>updateClock("clock"),1000);
 
-	setInterval(updateClock,1000);
-
-	updateClock();
+	updateClock("clock");
 </script>

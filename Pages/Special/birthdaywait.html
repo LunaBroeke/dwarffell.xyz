@@ -1,0 +1,19 @@
+﻿<body>
+    <div class="timerdisplay">
+        Please wait for: <div id="timer" class="timer"></div>
+        And then we will open up this page;
+    </div>
+    <div class="button-container">
+        <a href="/">
+            <button class="simple-button">Return to Main Page</button>
+        </a>
+    </div>
+</body>
+<script src="/js/site.js"></script>
+<script>
+    const item = "timer";
+    const target = "28-March-2025-00-00";
+    setInterval(() => updateTimer(item, target, true), 1000);
+
+    updateTimer(item, target, true);
+</script>

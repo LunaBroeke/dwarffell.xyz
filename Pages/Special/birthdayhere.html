@@ -1,0 +1,109 @@
+﻿<body>
+    <div class="text-center">
+        <h1>The epic Luna birthday</h1>
+        <div id="clock"></div>
+
+        So what do we do today?<br />
+        This is my day to push you into <a href="https://ko-fi.com/dwarffell" target="_blank">buying me a coffee.</a>
+        <br /> <br />
+
+        Though of course you can also support me emotionally by first off leaving your name below
+        <form id="registername" class="registerform">
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name" maxlength="24" placeholder="Name (required)"><br />
+            <label for="message">Message:</label><br />
+            <textarea name="message" id="message" maxlength="2048" rows="5" cols="50"
+                placeholder="Message (optional)"></textarea><br />
+            <button type="submit" class="simple-button">Submit</button>
+        </form>
+        <span id="registerstatus"></span>
+        <br/> <br/>
+        And now for visiting me through the virtual world:
+        <div class="event">
+            <h2>Super Mario Odyssey Online</h2>
+            Afterwards I'll be getting online on SMOO on <br />
+            <span class="location">IP: luwuna.smoo.it <br />Port: 2803</span><br />
+            <span class="location"> Check the server status on the <a href="/ServerList">server list</a></span> <br />
+            We are planning on doing Teams 4v4<br />
+            at <span id="event-time-smoo"></span> (that'd be in <span id="timerthree" class="timer"></span>) <br />
+            <img src="/bday-SMOO.png" als="Placeholder Super Mario Odyssey Online Logo" class="poster" />
+        </div>
+        <div class="event">
+            <h2>Final Fantasy XIV Online</h2>
+            Here I will be hosting my birthday inside the game in my apartment <br />
+            <span class="location">Faerie, Aether, The Lavender Beds, Ward 14, Lily Hills Subdivision, Apartment
+                27</span><br />
+            At <span id="event-time-ffxiv"></span> (that'd be in <span id="timertwo" class="timer"></span>) <br />
+            <img src="/bday-FFXIV.png" alt="Poster of my apartment in Final Fantasy XIV Online" class="poster" />
+        </div>
+
+    </div>
+    <div id="messagetable"></div>
+</body>
+<script src="/js/site.js"></script>
+<script>
+    const itemclock = "clock";
+    const itemffxiv = "timertwo";
+    const itemsmoo = "timerthree";
+    const targetffxiv = "28-March-2025-23-00";
+    const targetsmoo = "28-March-2025-21-00";
+    setInterval(() => updateClock(itemclock), 1000);
+    setInterval(() => updateTimer(itemffxiv, targetffxiv, false), 1000);
+    setInterval(() => updateTimer(itemsmoo, targetsmoo, false), 1000);
+    updateClock(itemclock);
+    updateTimer(itemffxiv, targetffxiv, false);
+    updateTimer(itemsmoo, targetsmoo, false);
+
+    updateEventTime("event-time-ffxiv", new Date(Date.UTC(2025, 3, 28, 21, 0)));
+    updateEventTime("event-time-smoo", new Date(Date.UTC(2025, 3, 28, 19, 0)));
+
+    document.getElementById("registername").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const message = document.getElementById("message").value;
+        const status = document.getElementById("registerstatus");
+        const submitButton = this.querySelector("button[type='submit']");
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+        fetch("/api/register/bday", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                message: message
+            })
+        }).then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return response.json().then(error => {
+                    throw new Error(error.message);
+                })
+            }
+        })
+            .then(data => {
+                status.textContent = data.message;
+                MessageTable();
+            })
+            .catch(error => {
+                status.textContent = error.message;
+            });
+    });
+
+    function MessageTable() {
+        const clock = document.getElementById("messagetable");
+        fetch('/api/register/bdaytable')
+            .then(response => response.json())
+            .then(data => {
+                clock.innerHTML = data.message;
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
+    }
+    //setInterval(() => MessageTable(), 5000);
+    MessageTable();
+</script>

@@ -1,12 +1,14 @@
 :root {
     --background-color: #121212;
     --text-color: #ffffff;
+    --subtext-color: #4a4a4a;
     --primary-color: #800093;
     --primary-color-hover: #ce5ec5;
-    --secondary-color: #03dac6;
+    --secondary-color: #42104c;
     --navbar-bg: #211d23;
     --background-color-secondary: #281d2f;
 }
+
 h1 {
     font-size: 50px;
     color: var(--text-color);
@@ -20,39 +22,42 @@ h2 {
     margin: 10px;
     text-align: center;
 }
-h3{
+
+h3 {
     font-size: 22px;
     color: var(--text-color);
     margin: 5px;
-    text-align:center;
+    text-align: center;
 }
-.navbar{
+
+.navbar {
     background-color: var(--navbar-bg);
     color: var(--text-color);
 }
-.navbar .nav-link{
+
+    .navbar .nav-link {
+        color: var(--text-color);
+        transition: color 0.3s ease;
+    }
+
+        .navbar .nav-link:hover {
+            color: var(--primary-color-hover);
+        }
+
+.navbar-brand {
     color: var(--text-color);
-    transition: color 0.3s ease;
 }
 
-.navbar .nav-link:hover {
-    color: var(--primary-color-hover);
-}
-
-.navbar-brand{
-    color: var(--text-color);
-}
-
-.navbar-brand:hover{
-    color: var(--primary-color-hover);
-}
+    .navbar-brand:hover {
+        color: var(--primary-color-hover);
+    }
 
 .navbar-toggler {
     border-color: var(--text-color);
 }
 
 .navbar-toggler-icon {
-    filter:invert(1);
+    filter: invert(1);
 }
 
 html {
@@ -84,7 +89,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin:5px 1px;
+    margin: 5px 1px;
     transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
@@ -93,6 +98,103 @@ body {
         transform: scale(1.1);
     }
 
+.secret-button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 7px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px 1px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+    .secret-button:hover {
+        background-color: var(--primary-color-hover);
+        transform: scale(1.1);
+    }
+
 a {
     text-decoration: none;
+}
+
+.timerdisplay {
+    font-size: 30px;
+    color: var(--text-color);
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 35px;
+}
+
+#clock {
+    font-size: 25px;
+    color: var(--text-color);
+    padding: 15px;
+    font-style: italic;
+}
+
+.subtext {
+    font-size: 10px;
+    color: var(--subtext-color);
+    margin-top: -20px;
+    margin-bottom: -20px;
+    text-align: center;
+}
+
+.location {
+    font-style: italic;
+}
+.timer{
+    display:inline;
+}
+.poster{
+    width: 220px;
+}
+.event{
+    padding-top:5px;
+    padding-bottom:30px;
+}
+.registerform{
+    padding: 2px;
+}
+input,textarea{
+    background-color: #2f2435;
+    color: white;
+    border: 2px solid #4e3e62;
+    border-radius: 14px;
+    font-size:16px;
+    padding:10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+input:focus, textarea:focus{
+    background-color:#5a396c;
+}
+.bdaymessagetable{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.bdaypost{
+    padding: 10px;
+    border-bottom: 1px solid #4e3e62;
+}
+.bdayname{
+    font-size: 20px;
+    font-weight: bold;
+}
+.bdaymessage{
+    font-size: 16px;
+}
+.bdaytime{
+    font-size: 12px;
+    color: #4e3e62;
+    font-style: italic;
 }

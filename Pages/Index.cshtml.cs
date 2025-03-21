@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Diagnostics.CodeAnalysis;
 namespace LunaSite.Pages
 {
 	public class IndexModel : PageModel
@@ -12,9 +13,20 @@ namespace LunaSite.Pages
 			_logger = logger;
 		}
 
-		// public void OnGet()
-		// {
-		// 	preview = BlogModel.GetPost();
-		// }
+		public string SecretButton()
+		{
+			DateTime startTime = new DateTime(2025, 3, 24);
+			DateTime endTime = new DateTime(2025, 3, 29);
+			DateTime now = DateTime.Now;
+			bool display = now >= startTime && now <= endTime;
+			if (display)
+			{
+				return "<a href='/birthday'><button class='secret-button'>Secret Button</button></a>";
+			}
+			else
+			{
+				return string.Empty;
+			}
+		}
 	}
 }

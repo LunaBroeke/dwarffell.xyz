@@ -64,9 +64,8 @@ namespace ServerList.Pages
 		public void RefreshServers()
 		{
 			string path = Path.Combine(Environment.CurrentDirectory, "wwwroot", "servers.json");
-			Console.WriteLine(path);
+			Console.WriteLine($"Requesting {path}");
 			string json = System.IO.File.ReadAllText(path);
-			Console.WriteLine(json);
 			serverData = JsonConvert.DeserializeObject<ServerData>(json);
 			foreach (GameServer server in serverData.SMOO)
 			{

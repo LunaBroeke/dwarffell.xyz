@@ -1,0 +1,19 @@
+﻿<body>
+    <div class="text-center">
+        <a href="/"><button class="simple-button">Back to Home</button></a>
+    </div>
+    <div id="messagetable"></div>
+</body>
+<script>
+    function MessageTable() {
+        const clock = document.getElementById("messagetable");
+        fetch('/api/register/bdaytable')
+            .then(response => response.json())
+            .then(data => {
+                clock.innerHTML = data.message;
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
+    }
+</script>
