@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Routing.Constraints;
+
 namespace LunaSite
 {
 	public class Program
@@ -8,6 +10,10 @@ namespace LunaSite
 
 			// Add services to the container.
 			builder.Services.AddRazorPages();
+			builder.Services.Configure<RouteOptions>(options =>
+			{
+				options.ConstraintMap.Add("ulong", typeof(LongRouteConstraint));
+			});
 			builder.Services.AddControllers();
 
 			var app = builder.Build();

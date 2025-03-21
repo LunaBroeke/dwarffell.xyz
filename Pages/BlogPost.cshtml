@@ -1,0 +1,10 @@
+﻿@page "/Blog/{id:ulong}"
+@model LunaSite.Pages.BlogPostModel
+@{
+	ViewData["Title"] = Model.Post?.Title ?? "Blog Post";
+}
+
+<h1>@Model.Post?.Title</h1>
+<p>@Model.Post?.Content</p>
+<p><strong>Author: </strong>@Model.Post?.Author</p>
+<p><strong>Published on: </strong>@Model.Post?.TimeStamp.ToString("dd MMM yyyy HH:mm:ss")</p>

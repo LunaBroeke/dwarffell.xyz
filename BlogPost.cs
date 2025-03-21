@@ -4,10 +4,11 @@ namespace LunaSite.Blog
 {
     public class Post
 	{
+		public ulong id { get; set; }
 		public string Title { get; set; }
 		public string Content { get; set; }
 		public string Author { get; set; }
-        public List<string> ImageSources { get; set; }
+        public List<string>? ImageSources { get; set; }
 		public DateTime TimeStamp { get; set; }
 	}
 
@@ -18,8 +19,8 @@ namespace LunaSite.Blog
 
     public class WriteRoot
     {
-        public string user {get; set;} = AuthTokens.AdminUser;
-        public string pass {get; set;} = AuthTokens.AdminPass;
+        public string user {get; set;}
+        public string pass {get; set;}
         public Post? post {get; set;}
 		public string ToString()
 		{
