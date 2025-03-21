@@ -8,6 +8,7 @@ namespace LunaSite.Pages
         public Post Post { get; set; }
 		public IActionResult OnGet(ulong id)
         {
+			Console.WriteLine($"Getting post with id {id}");
 			Post = BlogService.GetPostById(id);
 			if (Post == null)
 			{

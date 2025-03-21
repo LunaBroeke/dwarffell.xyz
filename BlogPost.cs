@@ -27,7 +27,7 @@ namespace LunaSite.Blog
 			if (post == null)
 			{ return $"{user}:{pass}";}
 			else
-			{ return $"{user}:{pass}";}
+			{ return $"{user}:{pass} {{ {post.Title} - {post.Content} - {post.Author }}}";}
 		}
     }
 }

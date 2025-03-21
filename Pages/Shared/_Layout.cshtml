@@ -1,83 +1,86 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - dwarffell.xyz</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <meta property="og:title" content="dwarffell.xyz" />
-    <meta property="og:description" content="dump for all my stuff" />
-    <meta property="og:url" content="https://dwarffell.xyz" />
-    <meta property="og:type" content="website" />
-    <meta name="theme color" content="#800093" />
-    <style>
-        /* Custom CSS for header and footer layout */
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - dwarffell.xyz</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<meta property="og:title" content="dwarffell.xyz" />
+	<meta property="og:description" content="dump for all my stuff" />
+	<meta property="og:url" content="https://dwarffell.xyz" />
+	<meta property="og:type" content="website" />
+	<meta name="theme color" content="#800093" />
+	<style>
+		/* Custom CSS for header and footer layout */
+		body, html {
+			height: 100%;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+		}
 
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
+		.content-wrapper {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+		}
 
-        header, footer {
-            flex-shrink: 0; /* Keeps header and footer from resizing */
-        }
+		header, footer {
+			flex-shrink: 0; /* Keeps header and footer from resizing */
+		}
 
-        main {
-            flex-grow: 1; /* Makes main content expand to fill space between header and footer */
-            padding-bottom: 3rem; /* Adjust for spacing, if needed */
-        }
-    </style>
+		main {
+			flex-grow: 1; /* Makes main content expand to fill space between header and footer */
+			padding-bottom: 3rem; /* Adjust for spacing, if needed */
+		}
+	</style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/icons/WHMBLM.png" alt="Logo" height="30" class="d-inline-block align-top">dwarffell.xyz</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/ServerList">Servers</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
+			<div class="container">
+				<a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/icons/WHMBLM.png" alt="Logo" height="30" class="d-inline-block align-top">dwarffell.xyz</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" asp-area="" asp-page="/ServerList">Servers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" asp-area="" asp-page="/Blog">Blog</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
 
-    <div class="content-wrapper">
-        <main role="main" class="container pb-3">
-            @RenderBody()
-        </main>
-    </div>
+	<div class="content-wrapper">
+		<main role="main" class="container pb-3">
+			@RenderBody()
+		</main>
+	</div>
 
-    <footer class="footer text-muted">
-        <div class="container">
-            &copy; 2025 - dwarffell - 
-            <a href="https://github.com/LunaBroeke/dwarffell.xyz" target="_blank"><img src="~/icons/github-mark-white.png" alt="Logo" height="20" class="d-inline-block align-bottom" /></a>
-            <a href="https://ko-fi.com/dwarffell" target="_blank"><img src="~/icons/kofi_symbol.svg" alt="Logo" height="20" class="d-inline-block align-bottom"/></a>
-            @Html.Raw(StaticInfo.version)
-        </div>
-    </footer>
+	<footer class="footer text-muted">
+		<div class="container">
+			&copy; 2025 - dwarffell -
+			<a href="https://github.com/LunaBroeke/dwarffell.xyz" target="_blank"><img src="~/icons/github-mark-white.png" alt="Logo" height="20" class="d-inline-block align-bottom" /></a>
+			<a href="https://ko-fi.com/dwarffell" target="_blank"><img src="~/icons/kofi_symbol.svg" alt="Logo" height="20" class="d-inline-block align-bottom" /></a>
+			@Html.Raw(StaticInfo.version)
+		</div>
+	</footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

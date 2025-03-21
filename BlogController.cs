@@ -52,7 +52,7 @@ namespace LunaSite.Blog
         }
         public static ulong GetRandomULong()
         {
-            byte[] buffer = new byte[16];
+            byte[] buffer = new byte[8];
             RandomNumberGenerator.Fill(buffer);
             return BitConverter.ToUInt64(buffer, 0);
 		}

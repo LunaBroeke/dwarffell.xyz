@@ -7,6 +7,7 @@
     --secondary-color: #42104c;
     --navbar-bg: #211d23;
     --background-color-secondary: #281d2f;
+    --footer-color: #4e3e62;
 }
 
 h1 {
@@ -151,50 +152,97 @@ a {
 .location {
     font-style: italic;
 }
-.timer{
-    display:inline;
+
+.timer {
+    display: inline;
 }
-.poster{
+
+.poster {
     width: 220px;
 }
-.event{
-    padding-top:5px;
-    padding-bottom:30px;
+
+.event {
+    padding-top: 5px;
+    padding-bottom: 30px;
 }
-.registerform{
+
+.registerform {
     padding: 2px;
 }
-input,textarea{
+
+input, textarea {
     background-color: #2f2435;
     color: white;
     border: 2px solid #4e3e62;
     border-radius: 14px;
-    font-size:16px;
-    padding:10px;
+    font-size: 16px;
+    padding: 10px;
     box-sizing: border-box;
     transition: background-color 0.3s ease;
 }
-input:focus, textarea:focus{
-    background-color:#5a396c;
-}
-.bdaymessagetable{
+
+    input:focus, textarea:focus {
+        background-color: #5a396c;
+    }
+
+.bdaymessagetable {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
-.bdaypost{
+
+.bdaypost {
     padding: 10px;
     border-bottom: 1px solid #4e3e62;
 }
-.bdayname{
+
+.bdayname {
     font-size: 20px;
     font-weight: bold;
 }
-.bdaymessage{
+
+.bdaymessage {
     font-size: 16px;
 }
-.bdaytime{
+
+.bdaytime {
     font-size: 12px;
     color: #4e3e62;
+    font-style: italic;
+}
+
+.blogtable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.blogpost {
+    padding: 10px;
+    border-bottom: 1px solid var(--footer-color);
+}
+
+.blogtitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+    .blogtitle a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+        .blogtitle a:hover {
+            color: inherit;
+            text-decoration-color: underline;
+        }
+
+.blogmessage {
+    font-size: 16px;
+}
+
+.blogfooter {
+    font-size: 10px;
+    color: var(--footer-color);
     font-style: italic;
 }
