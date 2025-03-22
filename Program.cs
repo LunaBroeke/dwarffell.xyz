@@ -9,6 +9,16 @@ namespace LunaSite
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
+
+			builder.Services.AddCors(options =>
+			{
+				options.AddPolicy("AllowAllOrigins", builder =>
+				{
+					builder.AllowAnyOrigin()
+						   .AllowAnyMethod()
+						   .AllowAnyHeader();
+				});
+			});
 			builder.Services.AddRazorPages();
 			builder.Services.Configure<RouteOptions>(options =>
 			{
@@ -30,7 +40,7 @@ namespace LunaSite
 			app.UseStaticFiles();
 
 			app.UseRouting();
-
+			app.UseCors("AllowAllOrigins");
 			app.UseAuthorization();
 
 			app.MapRazorPages();
