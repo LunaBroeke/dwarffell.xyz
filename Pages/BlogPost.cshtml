@@ -4,6 +4,8 @@
 	ViewData["Title"] = Model.Post?.Title ?? "Blog Post";
 }
 <body>
+	<a href="/Blog"><button class="simple-button">Back to Blog</button></a>
+	<a href="/"><button class="simple-button">Home</button></a> <br />
 <h1>@Html.Raw(Model.Post?.Title)</h1>
 <p>@Html.Raw(Model.Post?.Content)</p>
 <p><strong>Author: </strong>@Model.Post?.Author</p>
