@@ -21,7 +21,7 @@ namespace ServerList.SMOOJsonAPI
 		public string? ID { get; set; }
 		public string? Name { get; set; }
 		public string? Kingdom { get; set; }
-		public int GameMode { get; set; }
+		public int? GameMode { get; set; }
 		public string? Stage { get; set; }
 		public int Scenario { get; set; }
 		public Position? Position { get; set; }

@@ -262,6 +262,8 @@ input, textarea {
 
 .blogimage {
     width: 200px;
+    max-height: 200px;
+    object-fit: contain;
     padding: 10px;
     transition: transform 0.3s ease;
 }
@@ -269,3 +271,9 @@ input, textarea {
     .blogimage:hover {
         transform: scale(1.2);
     }
+
+p, span {
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}

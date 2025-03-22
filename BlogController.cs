@@ -46,7 +46,7 @@ namespace LunaSite.Blog
 				{
 					return BadRequest(new { message = "Post is required" });
 				}
-                root.post.id = GetRandomULong();
+                root.post.id = BlogService.GetNextPostId();
                 root.post.TimeStamp = DateTime.Now;
 
                 List<string> images = new List<string>();
@@ -74,7 +74,7 @@ namespace LunaSite.Blog
         }
         public static ulong GetRandomULong()
         {
-            byte[] buffer = new byte[8];
+            byte[] buffer = new byte[4];
             RandomNumberGenerator.Fill(buffer);
             return BitConverter.ToUInt64(buffer, 0);
 		}

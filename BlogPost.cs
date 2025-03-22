@@ -4,7 +4,7 @@ namespace LunaSite.Blog
 {
     public class Post
 	{
-		public ulong id { get; set; }
+		public int id { get; set; }
 		public string Title { get; set; }
 		public string Content { get; set; }
 		public string Author { get; set; }

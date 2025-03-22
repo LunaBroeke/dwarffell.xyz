@@ -22,7 +22,7 @@ namespace LunaSite.Blog
 			}
 		}
 
-		public static Post GetPostById(ulong id)
+		public static Post GetPostById(int id)
 		{
 			List<Post> posts = GetAllPosts();
 			foreach (Post post in posts)
@@ -40,6 +40,11 @@ namespace LunaSite.Blog
 			posts.Add(post);
 			string json = JsonConvert.SerializeObject(new Root { Posts = posts }, Formatting.Indented);
 			File.WriteAllText(path, json);
+		}
+		public static int GetNextPostId()
+		{
+			List<Post> posts = GetAllPosts();
+			return posts.Count+1;
 		}
 	}
 }
