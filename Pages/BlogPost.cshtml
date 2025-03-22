@@ -4,8 +4,8 @@
 	ViewData["Title"] = Model.Post?.Title ?? "Blog Post";
 }
 <body>
-<h1>@Model.Post?.Title</h1>
-<p>@Model.Post?.Content</p>
+<h1>@Html.Raw(Model.Post?.Title)</h1>
+<p>@Html.Raw(Model.Post?.Content)</p>
 <p><strong>Author: </strong>@Model.Post?.Author</p>
 <p><strong>Published on: </strong>@Model.Post?.TimeStamp.ToString("dd MMM yyyy HH:mm:ss")</p>
 @Html.Raw(Model.images)
