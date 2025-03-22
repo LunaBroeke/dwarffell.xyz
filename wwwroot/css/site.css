@@ -246,3 +246,26 @@ input, textarea {
     color: var(--footer-color);
     font-style: italic;
 }
+
+.blogimagesmall {
+    height: 60px;
+    border-radius: 20%;
+}
+
+.imageboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.blogimage {
+    width: 200px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .blogimage:hover {
+        transform: scale(1.2);
+    }

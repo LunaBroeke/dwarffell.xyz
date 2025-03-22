@@ -18,15 +18,21 @@ namespace LunaSite.Blog
 			{
                 s += $"<div class='blogpost'>" +
                     $"<span class='blogtitle'><a href='/Blog/{post.id}'>{post.Title}</a></span><br/>" +
-                    $"<span class='blogmessage'>{post.Content}</span><br/>" +
-                    $"<span class='blogfooter'>{post.Author} - {post.TimeStamp.ToString("dd MMM yyyy HH:mm:ss")}</span><br/>" +
-                    $"</div>";
+                    $"<span class='blogmessage'>{post.Content}</span><br/>";
+                if (post.ImageSources != null && post.ImageSources.Count >= 1)
+                {
+                    foreach(string image in post.ImageSources)
+					{
+						s += $"<img src='{image}' class='blogimagesmall'/>";
+					}
+				}
+                s += $"<br/><span class='blogfooter'>{post.Author} - {post.TimeStamp.ToString("dd MMM yyyy HH:mm:ss")}</span></div>";
 			}
             return Ok(new { message = s });
 		}
 
         [HttpPost("savepost")]
-        public IActionResult SavePost([FromBody] WriteRoot root)
+        public IActionResult SavePost([FromForm] WriteRoot root, [FromForm] List<IFormFile> postImageSources)
         {
             Console.WriteLine($"{Request.HttpContext.Connection.RemoteIpAddress?.ToString()}-{root.ToString()}");
 			if (root == null)
@@ -42,6 +48,22 @@ namespace LunaSite.Blog
 				}
                 root.post.id = GetRandomULong();
                 root.post.TimeStamp = DateTime.Now;
+
+                List<string> images = new List<string>();
+                foreach (var file in postImageSources)
+                {
+                    if (file.Length > 0)
+                    {
+                        string filePath = $"wwwroot/blogimages/{file.FileName}";
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+						{
+							file.CopyTo(stream);
+						}
+                        images.Add($"blogimages/{file.FileName}");
+                        Console.WriteLine($"Saved image {file.FileName} to {filePath}");
+					}
+                }
+                root.post.ImageSources = images;
 				BlogService.SavePost(root.post);
 				return Ok(new { message = "Post saved" });
 			}

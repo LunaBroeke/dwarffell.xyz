@@ -10,6 +10,7 @@
 		<textarea id="content" name="content" required></textarea><br/>
 		<label for="author">Author</label>
 		<input type="text" id="author" name="author" required/><br />
+		<input type="file" id="images" name="images" multiple /><br />
         <button type="submit">Submit</button>
     </form>
 </body>
@@ -26,12 +27,20 @@ document.getElementById('blogForm').addEventListener('submit', async function(ev
         }
     };
 
+		const formD = new FormData();
+			formD.append('user', formData.user);
+            formD.append('pass', formData.pass);
+				formD.append('post.Title', formData.post.Title);
+                formD.append('post.Content', formData.post.Content);
+					formD.append('post.Author', formData.post.Author);
+			const images = document.getElementById('images').files;
+				for (let i = 0; i < images.length; i++) {
+					formD.append('postImageSources', images[i]);
+				}
+
     const response = await fetch('/api/admin/blogcontroller/savepost', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+        body:formD
     });
 
     const result = await response.text();

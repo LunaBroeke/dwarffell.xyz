@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="BlogPosts\" />
+    <Folder Include="wwwroot\blogimages\" />
     <Folder Include="wwwroot\htmlpages\" />
   </ItemGroup>
 
