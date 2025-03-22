@@ -1,4 +1,4 @@
 public static class StaticInfo
 {
-    public static string version = "v1.2.0, branch=blog-v4";
+    public static string version = "v1.3.0";
 }
