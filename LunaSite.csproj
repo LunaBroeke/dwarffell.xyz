@@ -14,6 +14,7 @@
     <Folder Include="BlogPosts\" />
     <Folder Include="wwwroot\blogimages\" />
     <Folder Include="wwwroot\htmlpages\" />
+    <Folder Include="Pages\Special\" />
   </ItemGroup>
 
 </Project>
