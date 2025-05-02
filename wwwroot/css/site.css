@@ -99,6 +99,12 @@ body {
         transform: scale(1.1);
     }
 
+    .simple-button:disabled {
+        background-color: var(--secondary-color);
+        color: #666;
+        cursor: not-allowed;
+    }
+
 .secret-button {
     background-color: var(--secondary-color);
     color: white;

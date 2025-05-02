@@ -1,0 +1,47 @@
+.modal-container {
+    background-color: VAR(--secondary-color);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.download-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.download-box {
+    background-color: white;
+    color: purple;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    width: 45%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-credits{
+    font-size: 8px;
+    color: #666;
+    font-style: italic;
+}
+
+.dropdown-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#older-versions {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
